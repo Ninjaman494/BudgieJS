@@ -16,4 +16,11 @@ app.get('/expenses=:day',function(req,res){
 
 });
 
+app.get('/earnings=:day',function(req,res){
+    cloud.get_earnings(function(rows, fields){
+        res.send(rows);
+    },req.params.day);
+
+});
+
 module.exports = app;
